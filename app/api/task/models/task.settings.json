@@ -1,0 +1,28 @@
+{
+  "kind": "collectionType",
+  "collectionName": "tasks",
+  "info": {
+    "name": "task"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "deadline": {
+      "type": "date",
+      "required": false
+    },
+    "user": {
+      "via": "tasks",
+      "plugin": "users-permissions",
+      "model": "user"
+    }
+  }
+}
