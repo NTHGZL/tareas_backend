@@ -1,14 +1,13 @@
 {
   "kind": "collectionType",
-  "collectionName": "tasks",
+  "collectionName": "products",
   "info": {
-    "name": "task",
-    "description": ""
+    "name": "product"
   },
   "options": {
     "increments": true,
     "timestamps": true,
-    "draftAndPublish": true
+    "draftAndPublish": false
   },
   "pluginOptions": {},
   "attributes": {
@@ -17,9 +16,9 @@
       "required": true
     },
     "user": {
-      "via": "tasks",
       "plugin": "users-permissions",
-      "model": "user"
+      "model": "role",
+      "via": "products"
     }
   }
 }

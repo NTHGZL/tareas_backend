@@ -1244,6 +1244,12 @@
                   "type": "string"
                 }
               },
+              "products": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
               "created_by": {
                 "type": "string"
               },
@@ -1264,9 +1270,6 @@
                   "type": "string"
                 },
                 "title": {
-                  "type": "string"
-                },
-                "deadline": {
                   "type": "string"
                 },
                 "user": {
