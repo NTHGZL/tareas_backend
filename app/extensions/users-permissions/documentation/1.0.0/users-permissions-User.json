@@ -1275,6 +1275,9 @@
                 "user": {
                   "type": "string"
                 },
+                "isChecked": {
+                  "type": "boolean"
+                },
                 "published_at": {
                   "type": "string"
                 },

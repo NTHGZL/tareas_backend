@@ -10,13 +10,14 @@ module.exports = {
         let entity;
         if(ctx.is('multipart')){
             const {data, files} = parseMultipartData(ctx)
-
+            console.log(data, files)
             data.user = ctx.state.user.id
 
             entity = await strapi.services.task.create(data, {files})
 
         }else{
             ctx.request.body.user = ctx.state.user.id
+            console.log(ctx.request.body, ctx.state.user.id)
             entity = await strapi.services.task.create(ctx.request.body)
         }
         return entity

@@ -2,7 +2,8 @@
   "kind": "collectionType",
   "collectionName": "products",
   "info": {
-    "name": "product"
+    "name": "product",
+    "description": ""
   },
   "options": {
     "increments": true,
@@ -19,6 +20,11 @@
       "plugin": "users-permissions",
       "model": "role",
       "via": "products"
+    },
+    "isChecked": {
+      "type": "boolean",
+      "default": false,
+      "required": false
     }
   }
 }

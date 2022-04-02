@@ -569,6 +569,10 @@
                 "type": "string"
               }
             }
+          },
+          "isChecked": {
+            "type": "boolean",
+            "default": false
           }
         }
       },
@@ -582,6 +586,10 @@
           },
           "user": {
             "type": "string"
+          },
+          "isChecked": {
+            "type": "boolean",
+            "default": false
           },
           "created_by": {
             "type": "string"

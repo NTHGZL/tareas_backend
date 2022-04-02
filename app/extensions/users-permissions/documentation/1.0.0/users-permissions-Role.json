@@ -600,6 +600,9 @@
                 "user": {
                   "type": "string"
                 },
+                "isChecked": {
+                  "type": "boolean"
+                },
                 "created_by": {
                   "type": "string"
                 },

@@ -20,6 +20,10 @@
       "via": "tasks",
       "plugin": "users-permissions",
       "model": "user"
+    },
+    "isChecked": {
+      "type": "boolean",
+      "default": false
     }
   }
 }
