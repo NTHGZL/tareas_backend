@@ -1,6 +1,6 @@
 {
   "paths": {
-    "/products": {
+    "/invitations": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -12,7 +12,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Product"
+                    "$ref": "#/components/schemas/Invitation"
                   }
                 }
               }
@@ -51,7 +51,7 @@
         },
         "summary": "",
         "tags": [
-          "Product"
+          "Invitation"
         ],
         "parameters": [
           {
@@ -201,7 +201,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Product"
+                  "$ref": "#/components/schemas/Invitation"
                 }
               }
             }
@@ -239,7 +239,7 @@
         },
         "summary": "",
         "tags": [
-          "Product"
+          "Invitation"
         ],
         "requestBody": {
           "description": "",
@@ -247,14 +247,14 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewProduct"
+                "$ref": "#/components/schemas/NewInvitation"
               }
             }
           }
         }
       }
     },
-    "/products/count": {
+    "/invitations/count": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -306,12 +306,12 @@
         },
         "summary": "",
         "tags": [
-          "Product"
+          "Invitation"
         ],
         "parameters": []
       }
     },
-    "/products/{id}": {
+    "/invitations/{id}": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -321,7 +321,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Product"
+                  "$ref": "#/components/schemas/Invitation"
                 }
               }
             }
@@ -359,7 +359,7 @@
         },
         "summary": "",
         "tags": [
-          "Product"
+          "Invitation"
         ],
         "parameters": [
           {
@@ -383,7 +383,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Product"
+                  "$ref": "#/components/schemas/Invitation"
                 }
               }
             }
@@ -421,7 +421,7 @@
         },
         "summary": "",
         "tags": [
-          "Product"
+          "Invitation"
         ],
         "requestBody": {
           "description": "",
@@ -429,7 +429,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewProduct"
+                "$ref": "#/components/schemas/NewInvitation"
               }
             }
           }
@@ -495,7 +495,7 @@
         },
         "summary": "",
         "tags": [
-          "Product"
+          "Invitation"
         ],
         "parameters": [
           {
@@ -514,49 +514,77 @@
   },
   "components": {
     "schemas": {
-      "Product": {
+      "Invitation": {
         "required": [
-          "id",
-          "title"
+          "id"
         ],
         "properties": {
           "id": {
             "type": "string"
           },
-          "title": {
-            "type": "string"
-          },
-          "user": {
+          "sender": {
             "required": [
               "id",
+              "username",
+              "email",
               "name"
             ],
             "properties": {
               "id": {
                 "type": "string"
               },
+              "username": {
+                "type": "string"
+              },
+              "email": {
+                "type": "string"
+              },
+              "provider": {
+                "type": "string"
+              },
+              "password": {
+                "type": "string"
+              },
+              "resetPasswordToken": {
+                "type": "string"
+              },
+              "confirmationToken": {
+                "type": "string"
+              },
+              "confirmed": {
+                "type": "boolean"
+              },
+              "blocked": {
+                "type": "boolean"
+              },
+              "role": {
+                "type": "string"
+              },
+              "tasks": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
               "name": {
                 "type": "string"
               },
-              "description": {
+              "lastname": {
                 "type": "string"
               },
-              "type": {
-                "type": "string"
-              },
-              "permissions": {
+              "groups": {
                 "type": "array",
                 "items": {
                   "type": "string"
                 }
               },
-              "users": {
+              "invitations_sent": {
                 "type": "array",
                 "items": {
                   "type": "string"
                 }
               },
-              "products": {
+              "invitations_received": {
                 "type": "array",
                 "items": {
                   "type": "string"
@@ -570,26 +598,107 @@
               }
             }
           },
-          "completed": {
+          "isAnswered": {
             "type": "boolean",
             "default": false
+          },
+          "isAccepted": {
+            "type": "boolean",
+            "default": false
+          },
+          "recipient": {
+            "required": [
+              "id",
+              "username",
+              "email",
+              "name"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "username": {
+                "type": "string"
+              },
+              "email": {
+                "type": "string"
+              },
+              "provider": {
+                "type": "string"
+              },
+              "password": {
+                "type": "string"
+              },
+              "resetPasswordToken": {
+                "type": "string"
+              },
+              "confirmationToken": {
+                "type": "string"
+              },
+              "confirmed": {
+                "type": "boolean"
+              },
+              "blocked": {
+                "type": "boolean"
+              },
+              "role": {
+                "type": "string"
+              },
+              "tasks": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "name": {
+                "type": "string"
+              },
+              "lastname": {
+                "type": "string"
+              },
+              "groups": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "invitations_sent": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "invitations_received": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "created_by": {
+                "type": "string"
+              },
+              "updated_by": {
+                "type": "string"
+              }
+            }
           }
         }
       },
-      "NewProduct": {
-        "required": [
-          "title"
-        ],
+      "NewInvitation": {
         "properties": {
-          "title": {
+          "sender": {
             "type": "string"
           },
-          "user": {
-            "type": "string"
-          },
-          "completed": {
+          "isAnswered": {
             "type": "boolean",
             "default": false
+          },
+          "isAccepted": {
+            "type": "boolean",
+            "default": false
+          },
+          "recipient": {
+            "type": "string"
           },
           "created_by": {
             "type": "string"
@@ -603,7 +712,7 @@
   },
   "tags": [
     {
-      "name": "Product"
+      "name": "Invitation"
     }
   ]
 }

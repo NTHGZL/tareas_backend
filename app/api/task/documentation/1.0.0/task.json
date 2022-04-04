@@ -576,6 +576,24 @@
               "lastname": {
                 "type": "string"
               },
+              "groups": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "invitations_sent": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "invitations_received": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
               "created_by": {
                 "type": "string"
               },

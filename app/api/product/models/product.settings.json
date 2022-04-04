@@ -21,7 +21,7 @@
       "model": "role",
       "via": "products"
     },
-    "isChecked": {
+    "completed": {
       "type": "boolean",
       "default": false,
       "required": false

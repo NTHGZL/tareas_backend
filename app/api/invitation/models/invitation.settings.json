@@ -1,0 +1,33 @@
+{
+  "kind": "collectionType",
+  "collectionName": "invitations",
+  "info": {
+    "name": "invitation"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "sender": {
+      "plugin": "users-permissions",
+      "model": "user",
+      "via": "invitations_sent"
+    },
+    "isAnswered": {
+      "type": "boolean",
+      "default": false
+    },
+    "isAccepted": {
+      "type": "boolean",
+      "default": false
+    },
+    "recipient": {
+      "plugin": "users-permissions",
+      "model": "user",
+      "via": "invitations_received"
+    }
+  }
+}

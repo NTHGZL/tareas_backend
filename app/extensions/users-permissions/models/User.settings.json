@@ -69,6 +69,18 @@
     },
     "lastname": {
       "type": "string"
+    },
+    "groups": {
+      "via": "users",
+      "collection": "group"
+    },
+    "invitations_sent": {
+      "via": "sender",
+      "collection": "invitation"
+    },
+    "invitations_received": {
+      "via": "recipient",
+      "collection": "invitation"
     }
   }
 }
